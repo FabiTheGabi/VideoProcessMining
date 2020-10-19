@@ -1,0 +1,18 @@
+# Created in the VideoProcessMining project
+***********************
+This file specifies the classes for the activity recognition model.
+Just change the name attribute.
+Add new items for further classes and don't forget to increase the id-values.
+***********************Please delete from this line to first line
+item {
+  name: "classname_class1"
+  id: 1
+}
+item {
+  name: "classname_class2"
+  id: 2
+}
+item {
+  name: "classname_class3"
+  id: 3
+}

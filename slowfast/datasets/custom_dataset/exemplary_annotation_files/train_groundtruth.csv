@@ -1,0 +1,22 @@
+# Created in the VideoProcessMining project
+***********************
+This file comprises all activity annotations for training data.
+- A single row represents the activity of a single actor at a specific full video second.
+- The upper left corner (i.e., x1 and y1) as well as the bottom right corner (i.e., x2 and y2) characterize the location of an actor and the size of the corresponding bounding box. 
+  Bounding box coordinates are normalized with respect to the frame resolution (e.g., 10th pixel of an image with width of 100 pixels would be 10/100 = 0.1)
+- If an actor performs several activities concurrently (e.g., “stand” and “hold something”), these are split into a separate row for each activity.
+
+Each activity is represented by the following information:
+-video_name: the filename of the corresponding video in the "videos"-folder. Do not include the file extension
+-second: the full video second from the start of a video
+-x1: x-coordinate of the upper left corner of the actor's bounding box
+-y1: y-coordinate of the upper left corner of the actor's bounding box
+-x2: x-coordinate of the bottom right corner of the actor's bounding box
+-y2: y-coordinate of the bottom right corner of the actor's bounding box
+-activity_id: determines the activity class and refers to the id attribute of an item in the label_map_file.pbtxt
+-person_id: Although this information is not used during training, users must assign numeric identification values to actors.
+
+The first two rows are some exemplary data
+***********************Please delete from this line to first line
+video_file1,1,0.205,0.180,0.311,0.654,1,0
+video_file1,2,0.233,0.209,0.333,0.656,3,0
