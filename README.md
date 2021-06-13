@@ -39,8 +39,12 @@ Please find installation instructions in [INSTALL.md](INSTALL.md).
 
 You may follow the instructions in [DATASET.md](slowfast/datasets/DATASET.md) to prepare your custom dataset.
 
-## Use VideoProcessMining
+## Use VideoProcessMining For Training Or Testing Models
 
 After preparing your dataset, you can follow the instructions in [INSTRUCTIONS.md](INSTRUCTIONS.md) to train and test your models.
 
 You can also extract information from video data.
+
+## Reproduce our results
+
+If you are interested in reproducing our results, follow the instructions in [CREPE_DEMO.md](CREPE_DEMO.md).

@@ -1,6 +1,6 @@
 # Dataset Preparation
 
-Make sure you have properly installed the VideoProcessMining project following the instruction in [INSTALL.md](INSTALL.md).
+Make sure you have properly installed the VideoProcessMining project following the instruction in [INSTALL.md](../../INSTALL.md).
 The VideoProcessMining project exclusively targets video data for spatio-temporal activity recognition.
 This type of video data comprises at least one actor that performs at least one activity at a time.
 
