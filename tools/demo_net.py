@@ -19,7 +19,7 @@ from slowfast.utils.env import setup_environment
 from tools.preprocess_net import sec_to_frame, create_folder
 import mimetypes
 import datetime
-
+import pprint
 import multiprocessing as mp
 
 POISON_PILL = "STOP"
@@ -32,6 +32,11 @@ class MultiProcessDemo:
 
         # Set up environment.
         setup_environment()
+        # Setup logging format
+        logging.setup_logging(cfg.OUTPUT_DIR)
+
+        logger.info("Demo with config:")
+        logger.info(pprint.pformat(cfg))
 
         # Prepare the input video for best demo results
         cfg.DEMO.VIDEO_SOURCE_PATH_AT_FPS = self.create_demo_video_at_target_framerate(cfg.DEMO.VIDEO_SOURCE_PATH,
@@ -402,6 +407,8 @@ def run_demo(cfg, progress_callback=None):
     """
     # Set up environment.
     setup_environment()
+    # Setup logging format
+    logging.setup_logging(cfg.OUTPUT_DIR)
     logger.info("=== Demo started ===")
     multi_process_demo = MultiProcessDemo(cfg, progress_callback)
     multi_process_demo.run_demo()

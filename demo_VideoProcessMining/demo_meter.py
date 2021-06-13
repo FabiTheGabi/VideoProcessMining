@@ -33,6 +33,9 @@ class DemoMeter(object):
         # Set up environment.
         setup_environment()
 
+        # Setup logging format
+        logging.setup_logging(cfg.OUTPUT_DIR)
+
         self.cfg = cfg
 
         # In the case of an AVA-like predictor it is necessary to specify a

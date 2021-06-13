@@ -46,6 +46,8 @@ class DemoDetectron2ObjectPredictor(object):
         """
 
         setup_environment()
+        # Setup logging format
+        logging.setup_logging(cfg.OUTPUT_DIR)
 
         # The cfg file for the prototype
         self.cfg = cfg

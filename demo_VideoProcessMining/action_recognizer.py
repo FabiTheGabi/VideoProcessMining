@@ -45,6 +45,8 @@ class ActionRecognizer(object):
         """
 
         setup_environment()
+        # Setup logging format
+        logging.setup_logging(cfg.OUTPUT_DIR)
 
         self.cfg = cfg
         self.show_video = self.cfg.DEMO.VIDEO_SHOW_VIDEO_ENABLE or self.cfg.DEMO.VIDEO_EXPORT_VIDEO_ENABLE

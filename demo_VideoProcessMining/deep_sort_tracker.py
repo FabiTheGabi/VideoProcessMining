@@ -32,6 +32,8 @@ class DeepSortTracker(object):
         """
 
         setup_environment()
+        # Setup logging format
+        logging.setup_logging(cfg.OUTPUT_DIR)
 
         self.cfg = cfg
         self.show_video = show_video
