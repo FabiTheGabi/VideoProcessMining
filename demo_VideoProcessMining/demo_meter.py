@@ -248,7 +248,7 @@ class DemoMeter(object):
 
         # Create filename for current self.min_category_export_score
         self.results_log_csv_path = self.results_log_path_prefix + "_" + \
-                                         str(int(self.min_category_export_score * 100)) + "_thresh.csv"
+                                         str(int(round(self.min_category_export_score * 100))) + "_thresh.csv"
         # Create empty df
         self.case_and_instance_df = self.create_empty_case_and_instance_df()
 
@@ -613,7 +613,7 @@ class DemoMeter(object):
 
         # Create filename for current self.min_category_export_score
         self.results_xes_path = self.results_log_path_prefix + "_" + \
-                                         str(int(self.min_category_export_score * 100)) + "_thresh.xes"
+                                         str(int(round(self.min_category_export_score * 100))) + "_thresh.xes"
 
 
         # Read previously generated csv file an transform to log
