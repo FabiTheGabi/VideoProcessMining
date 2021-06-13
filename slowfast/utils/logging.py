@@ -39,15 +39,10 @@ def setup_logging(output_dir=None):
     # Set up logging format.
     _FORMAT = "[%(levelname)s: %(filename)s: %(lineno)4d]: %(message)s"
 
-    if du.is_master_proc():
-        # Enable logging for the master process.
-        logging.root.handlers = []
-        logging.basicConfig(
-            level=logging.INFO, format=_FORMAT, stream=sys.stdout
-        )
-    else:
-        # Suppress logging for non-master processes.
-        _suppress_print()
+    logging.root.handlers = []
+    logging.basicConfig(
+        level=logging.INFO, format=_FORMAT, stream=sys.stdout
+    )
 
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
@@ -57,13 +52,12 @@ def setup_logging(output_dir=None):
         datefmt="%m/%d %H:%M:%S",
     )
 
-    if du.is_master_proc():
-        ch = logging.StreamHandler(stream=sys.stdout)
-        ch.setLevel(logging.DEBUG)
-        ch.setFormatter(plain_formatter)
-        logger.addHandler(ch)
+    ch = logging.StreamHandler(stream=sys.stdout)
+    ch.setLevel(logging.DEBUG)
+    ch.setFormatter(plain_formatter)
+    logger.addHandler(ch)
 
-    if output_dir is not None and du.is_master_proc(du.get_world_size()):
+    if output_dir is not None:
         filename = os.path.join(output_dir, "stdout.log")
         fh = logging.StreamHandler(_cached_log_stream(filename))
         fh.setLevel(logging.DEBUG)
