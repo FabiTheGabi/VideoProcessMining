@@ -42,9 +42,10 @@ def create_folder_structure(cfg, progress_callback=None):
         create_folder(sub_dir)
 
     # Copy files into annotation folder
-    copyfile("slowfast/datasets/custom_dataset/exemplary_annotation_files/train_groundtruth.csv", os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.TRAIN_GT_BOX_LISTS[0]))
-    copyfile("slowfast/datasets/custom_dataset/exemplary_annotation_files/val_groundtruth.csv", os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.GROUNDTRUTH_FILE))
-    copyfile("slowfast/datasets/custom_dataset/exemplary_annotation_files/label_map_file.pbtxt", os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.LABEL_MAP_FILE))
+    ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    copyfile(os.path.join(ROOT_DIR, "slowfast/datasets/custom_dataset/exemplary_annotation_files/train_groundtruth.csv"), os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.TRAIN_GT_BOX_LISTS[0]))
+    copyfile(os.path.join(ROOT_DIR, "slowfast/datasets/custom_dataset/exemplary_annotation_files/val_groundtruth.csv"), os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.GROUNDTRUTH_FILE))
+    copyfile(os.path.join(ROOT_DIR, "slowfast/datasets/custom_dataset/exemplary_annotation_files/label_map_file.pbtxt"), os.path.join(cfg.CUSTOM_DATASET.ANNOTATION_DIR, cfg.CUSTOM_DATASET.LABEL_MAP_FILE))
 
     # Insert empty files for the rest
     empty_file_list_names = [cfg.CUSTOM_DATASET.TEST_PREDICT_BOX_LISTS[0], cfg.CUSTOM_DATASET.TRAIN_PREDICT_BOX_LISTS[0],
@@ -622,6 +623,8 @@ def preprocess_data(cfg):
     """
     # Set up environment.
     setup_environment()
+    # Setup logging format
+    logging.setup_logging(cfg.OUTPUT_DIR)
 
     logger.info("=== Preprocessing started ===")
 
