@@ -1,0 +1,40 @@
+item {
+  name: "cut"
+  id: 1
+}
+item {
+  name: "flip"
+  id: 2
+}
+item {
+  name: "fold"
+  id: 3
+}
+item {
+  name: "grate"
+  id: 4
+}
+item {
+  name: "pour"
+  id: 5
+}
+item {
+  name: "spread"
+  id: 6
+}
+item {
+  name: "sprinkle"
+  id: 7
+}
+item {
+  name: "stir"
+  id: 8
+}
+item {
+  name: "transfer"
+  id: 9
+}
+item {
+  name: "undefined"
+  id: 10
+}
