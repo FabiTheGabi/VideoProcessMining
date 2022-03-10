@@ -3,7 +3,6 @@
 The VideoProcessMining project provides a general approach to extract process-mining-conform event logs from unstructured video data.
 It targets custom datasets and spatio-temporal activity recognition.
 
-It is an implementation of the reference architecture presented in [Shedding Light on Blind Spots – Developing a Reference Architecture to Leverage Video Data for Process Mining](https://arxiv.org/abs/2010.11289)
 
 ![](demo_VideoProcessMining/video_process_mining_demo.gif)
 
