@@ -1,6 +1,6 @@
 # Reproduce Our Results
 
-This document shows how the results presented in [Shedding Light on Blind Spots: Developing a Reference Architecture to Leverage Video Data for Process Mining](https://arxiv.org/abs/2010.11289) can be reproduced.
+This document shows how the results can be reproduced.
 
 We obtained our results using a [Data Science Virtual Machine](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-dsvm.ubuntu-1804?tab=overview). As part of our non-functional evaluation, we tested the prototype using different hardware settings.
 
